@@ -1,0 +1,135 @@
+<!-- SevenM Clothing UI -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SevenM Clothing UI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="clothing-ui" class="clothing-ui hidden">
+        <div class="body-part-origin head-origin" id="head-origin" data-part="head"></div>
+        <div class="body-part-origin torso-origin" id="torso-origin" data-part="torso"></div>
+        <div class="body-part-origin ic7-origin" id="ic7-origin" data-part="ic7"></div>
+        <div class="body-part-origin Sm-origin" id="Sm-origin" data-part="Sm"></div>
+        <div class="body-part-origin accessories-origin" id="accessories-origin" data-part="accessories"></div>
+        <div class="body-part-origin arms-origin" id="arms-origin" data-part="arms"></div>
+        <div class="body-part-origin legs-origin" id="legs-origin" data-part="legs"></div>
+        <div class="body-part-origin shoes-origin" id="shoes-origin" data-part="shoes"></div>
+
+        <svg class="connecting-lines" id="connecting-lines">
+            <defs>
+                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#f7931e;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#ffd23f;stop-opacity:1" />
+                </linearGradient>
+                <filter id="glow">
+                    <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                    <feMerge> 
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+        </svg>
+
+        <div class="clothing-item-icon head-right" data-category="head" data-item="Hat" data-command="hat" id="hat-icon">
+            <img src="imgs/Hat.png" alt="Hat">
+            <span>Hat</span>
+        </div>
+        
+        <div class="clothing-item-icon head-right" data-category="head" data-item="Hair" data-command="hair" id="hair-icon">
+            <img src="imgs/Hair.png" alt="Hair">
+            <span>Hair</span>
+        </div>
+        
+        <div class="clothing-item-icon head-left" data-category="ic7" data-item="Glasses" data-command="glasses" id="glasses-icon">
+            <img src="imgs/Glasses.png" alt="Glasses">
+            <span>Glasses</span>
+        </div>
+        
+        <div class="clothing-item-icon head-left" data-category="ic7" data-item="Mask" data-command="mask" id="mask-icon">
+            <img src="imgs/Mask.png" alt="Mask">
+            <span>Mask</span>
+        </div>
+        
+        <div class="clothing-item-icon head-left" data-category="accessories" data-item="Earrings" data-command="ear" id="earrings-icon">
+            <img src="imgs/Earrings.png" alt="Earrings">
+            <span>Earrings</span>
+        </div>
+
+        <div class="clothing-item-icon head-left" data-category="accessories" data-item="Neck" data-command="neck" id="neck-icon">
+            <img src="imgs/Neck.png" alt="Neck">
+            <span>Neck</span>
+        </div>
+
+        <div class="clothing-item-icon torso-left" data-category="torso" data-item="Top" data-command="top" id="top-icon">
+            <img src="imgs/Top.png" alt="Top">
+            <span>Jacket</span>
+        </div>
+        
+        <div class="clothing-item-icon torso-left" data-category="torso" data-item="Shirt" data-command="shirt" id="shirt-icon">
+            <img src="imgs/Shirt.png" alt="Shirt">
+            <span>Shirt</span>
+        </div>
+        
+        <div class="clothing-item-icon torso-right" data-category="Sm" data-item="Vest" data-command="vest" id="vest-icon">
+            <img src="imgs/Vest.png" alt="Vest">
+            <span>Vest</span>
+        </div>
+        
+        <div class="clothing-item-icon torso-right" data-category="Sm" data-item="Bag" data-command="bag" id="bag-icon">
+            <img src="imgs/Bag.png" alt="Bag">
+            <span>Bag</span>
+        </div>
+
+        <div class="clothing-item-icon legs-right" data-category="legs" data-item="Pants" data-command="pants" id="pants-icon">
+            <img src="imgs/Pants.png" alt="Pants">
+            <span>Pants</span>
+        </div>
+        
+        <div class="clothing-item-icon legs-right" data-category="shoes" data-item="Shoes" data-command="shoes" id="shoes-icon">
+            <img src="imgs/Shoes.png" alt="Shoes">
+            <span>Shoes</span>
+        </div>
+
+        <div class="clothing-item-icon arms-left" data-category="arms" data-item="Gloves" data-command="gloves" id="gloves-icon">
+            <img src="imgs/Gloves.png" alt="Gloves">
+            <span>Gloves</span>
+        </div>
+        
+        <div class="clothing-item-icon arms-left" data-category="arms" data-item="Watch" data-command="watch" id="watch-icon">
+            <img src="imgs/Watch.png" alt="Watch">
+            <span>Watch</span>
+        </div>
+
+        <div class="control-panel">
+            <div class="control-btn reset-btn" id="reset-btn">
+                <i class="fas fa-sync-alt"></i>
+                <span>Reset</span>
+            </div>
+            <div class="control-btn close-btn" id="close-btn">
+                <i class="fas fa-times"></i>
+                <span>Close</span>
+            </div>
+        </div>
+
+        <div class="status-display">
+            <div class="status-item">
+                <span class="status-label">Selected:</span>
+                <span class="status-value" id="selected-item">None</span>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/ui.js"></script>
+</body>
+</html>
+
