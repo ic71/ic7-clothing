@@ -34,4 +34,4 @@ A modern and interactive clothing menu for FiveM (QBCore) servers. Easily switch
 
 ## Discord
 For support, suggestions, or updates, join our Discord:
-[ٍSevenM](https://discord.gg/MScsAzgP4u) 
+[discord.gg/SevenM](https://discord.gg/MScsAzgP4u) 
