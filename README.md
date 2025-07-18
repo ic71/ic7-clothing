@@ -2,7 +2,7 @@
 
 ## SevenM Clothing UI
 
-A modern and interactive clothing menu for FiveM (QBCore) servers. Easily switch hats, shirts, bags, accessories, and more with a beautiful UI.
+A modern and interactive clothing menu for FiveM (QBCore, ESX) servers. Easily switch hats, shirts, bags, accessories, and more with a beautiful UI.
 
 ---
 
