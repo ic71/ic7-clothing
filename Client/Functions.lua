@@ -76,8 +76,8 @@ function IsMpPed(ped)
 end
 
 
-RegisterNetEvent('Sevem_clothing:EquipLast')
-AddEventHandler('Sevem_clothing:EquipLast', function()
+RegisterNetEvent('ic7-clothing:EquipLast')
+AddEventHandler('ic7-clothing:EquipLast', function()
 	local Ped = PlayerPedId()
 	for k,v in pairs(LastEquipped) do
 		if v then
@@ -89,8 +89,8 @@ AddEventHandler('Sevem_clothing:EquipLast', function()
 end)
 
 
-RegisterNetEvent('Sevem_clothing:ResetClothing')
-AddEventHandler('Sevem_clothing:ResetClothing', function()
+RegisterNetEvent('ic7-clothing:ResetClothing')
+AddEventHandler('ic7-clothing:ResetClothing', function()
 	LastEquipped = {}
 end)
 
