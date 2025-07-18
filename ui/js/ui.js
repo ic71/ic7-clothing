@@ -488,9 +488,9 @@ function playHoverSound() {
 
 function GetParentResourceName() {
     try {
-        return window.GetParentResourceName() || 'Sevem_clothing';
+        return window.GetParentResourceName() || 'ic7-clothing';
     } catch (e) {
-        return 'Sevem_clothing';
+        return 'ic7-clothing';
     }
 }
 
